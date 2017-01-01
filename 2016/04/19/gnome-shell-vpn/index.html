@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives | yuzunzz.github.io</title>
+  <title>gnome_shell_vpn | yuzunzz.github.io</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,37 +191,41 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/04/19/gnome-shell-vpn/">gnome_shell_vpn</a></h4>
-                            
-                            <p><time datetime="2016-04-19T12:06:58.000Z"><a href="/2016/04/19/gnome-shell-vpn/">2016-04-19</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-04-19T12:06:58.000Z" itemprop="datePublished">
+          2016-04-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/linux/'>linux</a>
+    
+    
+</span>
+                <h1>gnome_shell_vpn</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p>Kali Linux采用的Gnome Shell桌面环境，预装了NetworkManager，但有关VPN的依赖组件需要自行安装。<br><img src="https://static.yuzunzz.top/images/2017/01/01/Kali-VPN-1.png" alt="Kali-VPN-1.png"><br>安装组件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install -y pptpd network-manager-openvpn network-manager-openvpn-gnome network-manager-pptp network-manager-pptp-gnome network-manager-vpnc network-manager-vpnc-gnome</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/Kali-VPN-2.png" alt="Kali-VPN-2.png"><br>此时配置VPN时即可看见选项，能创建成功但不能建立连接，需要修改下NetworkManager.conf的内容。<br><img src="https://static.yuzunzz.top/images/2017/01/01/Kali-VPN-2.png" alt="Kali-VPN-2.png"><br><img src="https://static.yuzunzz.top/images/2017/01/01/Kali-VPN-3.png" alt="Kali-VPN-3.png"><br>managed=false改为 true ，然后保存重启。<br><img src="https://static.yuzunzz.top/images/2017/01/01/Kali-VPN-4.png" alt="Kali-VPN-4.png"><br>Over.<br><img src="https://static.yuzunzz.top/images/2017/01/01/Kali-VPN-5.png" alt="Kali-VPN-5.png"></p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+</nav>
+
+        <div class="duoshuo"></div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
