@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>yuzunzz.github.io</title>
+  <title>将装在VMware Workstation上的Ubuntu根分区扩容 | yuzunzz.github.io</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -190,145 +190,12 @@
         <!-- // End height spacing helper -->
 
         <!-- ============================ END Hero Image =========================== -->
-      <!-- ============================ Content =========================== -->
-
+      
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/04/21/gnome_ubuntu_server_vino/">ubuntu_server_vino</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-04-20T16:22:18.000Z" itemprop="datePublished">
-          2016-04-21
-      </time>
-    
-    
-    | 
-    <a href='/tags/linux/'>linux</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        ubuntu server在安装桌面环境gnome-shell后便会自带远程桌面共享（也就是vino）的功能，但有时候因为桌面环境的安装问题，可能会找不到设置的界面。在终端中运行命令：
-vino-preferences
-如果提示未找到命令，则按提示 sudo apt-get install vino 安装下vino
-在弹出的图形化界面中设置好参数后，用vnc连接却报错，如图：
-
-看意思是说不支持数据传输加密方式啥的，google下，找了
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/04/21/gnome_ubuntu_server_vino/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/04/19/gnome-shell-vpn/">gnome_shell_vpn</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-04-19T12:06:58.000Z" itemprop="datePublished">
-          2016-04-19
-      </time>
-    
-    
-    | 
-    <a href='/tags/linux/'>linux</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Kali Linux采用的Gnome Shell桌面环境，预装了NetworkManager，但有关VPN的依赖组件需要自行安装。安装组件。1apt-get install -y pptpd network-manager-openvpn network-manager-openvpn-gnome network-manager-pptp network-manager-pptp-gnome network-manager-vpnc n
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/04/19/gnome-shell-vpn/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/04/19/chm_play/">组合技——chm玩耍</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-04-19T12:06:58.000Z" itemprop="datePublished">
-          2016-04-19
-      </time>
-    
-    
-    | 
-    <a href='/tags/msf/'>msf</a>,
-    
-    <a href='/tags/chm/'>chm</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        需要准备:
-
-nishang开源项目
-msf框架
-公网ip
-
-
-原理：
-nishang生成带有攻击脚本的excel和word或者chm，利用宏或者chm中的漏洞创建进程获取kali服务器上的攻击脚本，并下载到本地执行，从而反弹回一个shell
-
-直接利用nishang生成带访问攻击宏的Excel 或Word文档和chm文件缺点： 只有启用宏的office才能攻击成功，chm因为调用cmd带弹窗。
-步骤:
-
-搭建msf环境
-
-
-在终端中启
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/04/19/chm_play/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/04/08/vmware_expand_root_capacity/">将装在VMware Workstation上的Ubuntu根分区扩容</a></h3>
-                    <span>
-                        <span class="post-meta">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
       <time datetime="2016-04-08T05:29:38.000Z" itemprop="datePublished">
           2016-04-08
       </time>
@@ -341,45 +208,50 @@ nishang生成带有攻击脚本的excel和word或者chm，利用宏或者chm中�
     
     
 </span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-扩容前需要将以前保存的快照删除关机状态下，选择 虚拟机/设置/硬盘/磁盘实用工具/扩展  将原虚拟磁盘空间增大
-
-重启进入系统，用命令df -h看下分区，会发现根分区还是原来的大小，原因是新增加的虚拟分区未格式化
-这里使用 gparted-live的镜像来完成对系统分区的合并
-镜像下载地址
-选择虚拟机/ CD DVD/ 浏览文件，选择下载的镜像（如gparted-live-0.8.0-5.iso），把 “已连接” 和 “开机时启动” 
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/04/08/vmware_expand_root_capacity/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
+                <h1>将装在VMware Workstation上的Ubuntu根分区扩容</h1>
             </div>
         </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          
-        </nav>
-    </div>
-</section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        <div class="col-md-8 col-md-offset-2">
+      		<blockquote>
+<p>扩容前需要将以前保存的快照删除<br>关机状态下，选择 <strong>虚拟机/设置/硬盘/磁盘实用工具/扩展</strong>  将原虚拟磁盘空间增大</p>
+</blockquote>
+<p>重启进入系统，用命令<code>df -h</code>看下分区，会发现根分区还是原来的大小，原因是新增加的虚拟分区未格式化</p>
+<p>这里使用 gparted-live的镜像来完成对系统分区的合并</p>
+<p><a href="http://sourceforge.net/projects/gparted/files/gparted-live-testing/OldFiles/" target="_blank" rel="external">镜像下载地址</a></p>
+<p>选择<strong>虚拟机/ CD DVD/ </strong>浏览文件，选择下载的镜像（如gparted-live-0.8.0-5.iso），把 “已连接” 和 “开机时启动” 复选框勾选上，然后重启系统</p>
+<p>重启到 VMware 开机画面时，快速按ESC键进入启动设备项选择界面，或者按F2进BIOS将CD ROM调到第一启动项（boot项，按减号调整启动项顺序）</p>
+<p>加载镜像，选择 第一项，进入gparted live-cd 模式</p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity1.png" alt="Expandcapacity1.png"></p>
+<p>根据提示，输入26选择中文，输入start X进入图形界面</p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity2.png" alt="Expandcapacity2.png"></p>
+<p>进入图形界面后可以看到当前的分区情况，第一部分 <strong>/dev/sda1</strong> 大小为安装虚拟机时所分配的虚拟磁盘空间大小，第二部分 <strong>/dev/sd2 /dev/sd5</strong> 是swap分区（似乎），第三部分是未分配的磁盘空间，即我们之前所扩充的虚拟磁盘</p>
+<p>Gparted调整磁盘空间的原理自行百度，按照用法，可以将相邻的分区合并，但是我们未分配的空间在swap下面，需要将它“移动”上来。</p>
+<p>##具体操作:</p>
+<ol>
+<li>将 <strong>/dev/sda5</strong> 即swap分区删除</li>
+<li>调整 <strong>/dev/sda2</strong> 的大小，把 <strong>之后空余空间</strong> 调为0,这一步操作会有提示 <strong>可能导致启动分区操作系统无法启动</strong><br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity3.png" alt="Expandcapacity3.png"></li>
+<li>将 <strong>/dev/sda1</strong> 调整到最大<br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity4.png" alt="Expandcapacity4.png"></li>
+<li>将swap还原<br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity5.png" alt="Expandcapacity5.png"></li>
+<li>确认之前的操作，然后Apply，一般一两分钟就能完成。然后重启虚拟机，进入原系统，再看看分区大小，根分区扩容成功。</li>
+</ol>
+<p>Over.</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/04/19/chm_play/" style="float: left;">
+        ← 组合技——chm玩耍
+    </a>
+    
+    
+</nav>
+
+        <div class="duoshuo"></div>
     </div>
 </section>
-<!-- ============================ END Content =========================== -->
+
 
       
 <!-- ============================ Footer =========================== -->
