@@ -226,8 +226,7 @@
 <p><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity2.png" alt="Expandcapacity2.png"></p>
 <p>进入图形界面后可以看到当前的分区情况，第一部分 <strong>/dev/sda1</strong> 大小为安装虚拟机时所分配的虚拟磁盘空间大小，第二部分 <strong>/dev/sd2 /dev/sd5</strong> 是swap分区（似乎），第三部分是未分配的磁盘空间，即我们之前所扩充的虚拟磁盘</p>
 <p>Gparted调整磁盘空间的原理自行百度，按照用法，可以将相邻的分区合并，但是我们未分配的空间在swap下面，需要将它“移动”上来。</p>
-<p>##具体操作:</p>
-<ol>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作:"></a>具体操作:</h2><ol>
 <li>将 <strong>/dev/sda5</strong> 即swap分区删除</li>
 <li>调整 <strong>/dev/sda2</strong> 的大小，把 <strong>之后空余空间</strong> 调为0,这一步操作会有提示 <strong>可能导致启动分区操作系统无法启动</strong><br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity3.png" alt="Expandcapacity3.png"></li>
 <li>将 <strong>/dev/sda1</strong> 调整到最大<br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity4.png" alt="Expandcapacity4.png"></li>
