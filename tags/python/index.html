@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>i春秋渗透实验——渗透测试笔记 | yuzunzz.github.io</title>
+  <title>Tag: python | yuzunzz.github.io</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,61 +191,37 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-<section id="intro">
+
+
+<section id="services">
     <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2016-07-16T05:51:41.000Z" itemprop="datePublished">
-          2016-07-16
-      </time>
-    
-    
-    | 
-    <a href='/tags/ichunqiu/'>ichunqiu</a>
-    
-    
-</span>
-                <h1>i春秋渗透实验——渗透测试笔记</h1>
-            </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2017/01/03/script_sole/">填坑——脚本大坑</a></h4>
+                            
+                            <p><time datetime="2017-01-03T00:29:31.000Z"><a href="/2017/01/03/script_sole/">2017-01-03</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h3 id="0x00-挑战任务概览"><a href="#0x00-挑战任务概览" class="headerlink" title="0x00 挑战任务概览"></a>0x00 挑战任务概览</h3><p><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_1.png" alt="pen_test_1.png"><br>一共要获得三个信息，第一个是<code>www.test.ichunqiu</code>的后台管理员密码，第二个是系统管理员桌面上的flag文件内容，第三个是<code>bbs.test.ichunqiu</code>论坛数据库中管理员的SALT值。</p>
-<h3 id="0x01-齐博CMS"><a href="#0x01-齐博CMS" class="headerlink" title="0x01 齐博CMS"></a>0x01 齐博CMS</h3><p>齐博CMS…看版本号是v7整站CMS，先去齐博官网下了套源码，然后搜索这个CMS的已公开漏洞并逐一尝试，发现有一个<a href="http://www.wooyun.org/bugs/wooyun-2014-066459" target="_blank" rel="external">任意文件下载漏洞</a>可以成功，不过漏洞中所提到的sql注入似乎没法实现(也许是因为操作失误…)。</p>
-<p>同时，发现扫描工具扫出来一些可疑的文件，结合上面的漏洞下载下来，发现根目录下的<code>2.php</code>webshell(应该是出题人为降低难度设置的。。。正确做法应该还是通过sql注入获取到管理员密码再从后台getshell)…、<br><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_5.png" alt="pen_test_5.png"></p>
-<p><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_2.png" alt="pen_test_2.png"></p>
-<p><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_3.png" alt="pen_test_3.png"></p>
-<p><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_4.png" alt="pen_test_4.png"></p>
-<p>菜刀连上之后，将网站目录对比官网下的源码目录，发现了一个dede的备份目录。找到数据库连接配置文件，用菜刀连接数据库，得到管理员密码md5哈希值，在md5库中查询得到管理员明文密码。<br><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_6.png" alt="pen_test_6.png"></p>
-<p><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_7.png" alt="pen_test_7.png"></p>
-<h2 id="0x02-系统管理员桌面flag文件"><a href="#0x02-系统管理员桌面flag文件" class="headerlink" title="0x02 系统管理员桌面flag文件"></a>0x02 系统管理员桌面flag文件</h2><p>这个系统中php的权限比较高，不需要提权，直接找到文件夹读取文件。<br><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_8.png" alt="pen_test_8.png">]</p>
-<h2 id="0x03-Discuz-论坛管理员SALT值"><a href="#0x03-Discuz-论坛管理员SALT值" class="headerlink" title="0x03 Discuz!论坛管理员SALT值"></a>0x03 Discuz!论坛管理员SALT值</h2><p>访问<code>bbs.test.ichunqiu</code>，发现是Discuz！X3.1 ，搜索后没有发现什么好利用的漏洞。<br><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_9.png" alt="pen_test_9.png"></p>
-<p>联想到之前<code>www.test.ichunqiu(172.16.12.2)</code>上有一个dede的bak目录，查找后发现了<code>bbs.test.ichunqiu(172.16.12.3)</code>的数据库账号密码。</p>
-<p><code>#递归寻找当前目录下所有含有“172.16.12.3”字符串的文件</code><br><code>findstr /s 172.16.12.3 *</code><br><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_10.png" alt="pen_test_10.png"></p>
-<p><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_11.png" alt="pen_test_11.png"><br>然后使用数据库连接工具连接数据库，搜索可知Discuz!的管理员账号加密方式是先将明文密码md5加密，然后随机生成SALT，再将SALT和md5哈希值连接再进行一次md5加密。其中生成的SALT值存储在ultrax数据库中的pre_ucenter_members表内。<br><img src="https://static.yuzunzz.top/images/2017/01/01/pen_test_12.png" alt="pen_test_12.png"></p>
-<p>因为mysql账号为root，所以可以读取系统文件、上传文件，应该是可以拿下服务器权限的。</p>
+    </div>
+</section> 
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
         </div>
-        <nav class="pagination" role="pagination">
-    
-    <a class="pull-left" href="/2017/01/03/script_sole/" style="float: left;">
-        ← 填坑——脚本大坑
-    </a>
-    
-    
-    <a class="pull-right" href="/2016/07/16/true_simple/">
-        i春秋渗透实验——真的很简单 →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo"></div>
     </div>
 </section>
-
-
       
 <!-- ============================ Footer =========================== -->
 
