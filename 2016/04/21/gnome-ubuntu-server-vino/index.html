@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: ichunqiu | yuzunzz.github.io</title>
+  <title>ubuntu_server_vino | yuzunzz.github.io</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,55 +191,56 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/01/03/script-sole/">填坑——脚本大坑</a></h4>
-                            
-                            <p><time datetime="2017-01-03T00:29:31.000Z"><a href="/2017/01/03/script-sole/">2017-01-03</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/07/16/pen-test/">i春秋渗透实验——渗透测试笔记</a></h4>
-                            
-                            <p><time datetime="2016-07-16T05:51:41.000Z"><a href="/2016/07/16/pen-test/">2016-07-16</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/07/16/true-simple/">i春秋渗透实验——真的很简单</a></h4>
-                            
-                            <p><time datetime="2016-07-15T17:17:42.000Z"><a href="/2016/07/16/true-simple/">2016-07-16</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-04-20T16:22:18.000Z" itemprop="datePublished">
+          2016-04-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/linux/'>linux</a>
+    
+    
+</span>
+                <h1>ubuntu_server_vino</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p>ubuntu server在安装桌面环境gnome-shell后便会自带远程桌面共享（也就是vino）的功能，但有时候因为桌面环境的安装问题，可能会找不到设置的界面。<br>在终端中运行命令：</p>
+<p><code>vino-preferences</code></p>
+<p>如果提示未找到命令，则按提示 <code>sudo apt-get install vino</code> 安装下vino</p>
+<p>在弹出的图形化界面中设置好参数后，用vnc连接却报错，如图：</p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/vnc-error.png" alt="vnc-error.png"></p>
+<p>看意思是说不支持数据传输加密方式啥的，google下，找了一会，解决方案就是把服务器那边的传输方式设成不加密…</p>
+<p>终端执行命令:</p>
+<p><code>gsettings set org.gnome.Vino require-encryption false</code></p>
+<p>Over.</p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/07/16/true-simple/" style="float: left;">
+        ← i春秋渗透实验——真的很简单
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/04/19/chm-play/">
+        组合技——chm玩耍 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo"></div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 

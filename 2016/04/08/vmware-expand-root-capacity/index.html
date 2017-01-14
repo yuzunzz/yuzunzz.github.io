@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: ichunqiu | yuzunzz.github.io</title>
+  <title>将装在VMware Workstation上的Ubuntu根分区扩容 | yuzunzz.github.io</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,55 +191,67 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/01/03/script-sole/">填坑——脚本大坑</a></h4>
-                            
-                            <p><time datetime="2017-01-03T00:29:31.000Z"><a href="/2017/01/03/script-sole/">2017-01-03</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/07/16/pen-test/">i春秋渗透实验——渗透测试笔记</a></h4>
-                            
-                            <p><time datetime="2016-07-16T05:51:41.000Z"><a href="/2016/07/16/pen-test/">2016-07-16</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/07/16/true-simple/">i春秋渗透实验——真的很简单</a></h4>
-                            
-                            <p><time datetime="2016-07-15T17:17:42.000Z"><a href="/2016/07/16/true-simple/">2016-07-16</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-04-08T05:29:38.000Z" itemprop="datePublished">
+          2016-04-08
+      </time>
+    
+    
+    | 
+    <a href='/tags/linux/'>linux</a>,
+    
+    <a href='/tags/VMware-Workstation/'>VMware Workstation</a>
+    
+    
+</span>
+                <h1>将装在VMware Workstation上的Ubuntu根分区扩容</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<blockquote>
+<p>扩容前需要将以前保存的快照删除<br>关机状态下，选择 <strong>虚拟机/设置/硬盘/磁盘实用工具/扩展</strong>  将原虚拟磁盘空间增大</p>
+</blockquote>
+<p>重启进入系统，用命令<code>df -h</code>看下分区，会发现根分区还是原来的大小，原因是新增加的虚拟分区未格式化</p>
+<p>这里使用 gparted-live的镜像来完成对系统分区的合并</p>
+<p><a href="http://sourceforge.net/projects/gparted/files/gparted-live-testing/OldFiles/" target="_blank" rel="external">镜像下载地址</a></p>
+<p>选择<strong>虚拟机/ CD DVD/ </strong>浏览文件，选择下载的镜像（如gparted-live-0.8.0-5.iso），把 “已连接” 和 “开机时启动” 复选框勾选上，然后重启系统</p>
+<p>重启到 VMware 开机画面时，快速按ESC键进入启动设备项选择界面，或者按F2进BIOS将CD ROM调到第一启动项（boot项，按减号调整启动项顺序）</p>
+<p>加载镜像，选择 第一项，进入gparted live-cd 模式</p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity1.png" alt="Expandcapacity1.png"></p>
+<p>根据提示，输入26选择中文，输入start X进入图形界面</p>
+<p><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity2.png" alt="Expandcapacity2.png"></p>
+<p>进入图形界面后可以看到当前的分区情况，第一部分 <strong>/dev/sda1</strong> 大小为安装虚拟机时所分配的虚拟磁盘空间大小，第二部分 <strong>/dev/sd2 /dev/sd5</strong> 是swap分区（似乎），第三部分是未分配的磁盘空间，即我们之前所扩充的虚拟磁盘</p>
+<p>Gparted调整磁盘空间的原理自行百度，按照用法，可以将相邻的分区合并，但是我们未分配的空间在swap下面，需要将它“移动”上来。</p>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作:"></a>具体操作:</h2><ol>
+<li>将 <strong>/dev/sda5</strong> 即swap分区删除</li>
+<li>调整 <strong>/dev/sda2</strong> 的大小，把 <strong>之后空余空间</strong> 调为0,这一步操作会有提示 <strong>可能导致启动分区操作系统无法启动</strong><br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity3.png" alt="Expandcapacity3.png"></li>
+<li>将 <strong>/dev/sda1</strong> 调整到最大<br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity4.png" alt="Expandcapacity4.png"></li>
+<li>将swap还原<br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity5.png" alt="Expandcapacity5.png"></li>
+<li>确认之前的操作，然后Apply，一般一两分钟就能完成。然后重启虚拟机，进入原系统，再看看分区大小，根分区扩容成功。</li>
+</ol>
+<p>Over.</p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/04/19/gnome-shell-vpn/" style="float: left;">
+        ← gnome_shell_vpn
+    </a>
+    
+    
+</nav>
+
+        <div class="duoshuo"></div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
