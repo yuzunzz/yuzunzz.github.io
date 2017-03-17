@@ -125,7 +125,7 @@
                     <!-- Nav logo -->
                     <div class="logo">
                         <a href="/" title="Logo" class="animsition-link">
-                         <img src="https://static.yuzunzz.top/images/2016/12/12/fate-logo.png" alt="Logo" width="35px;"/> 
+                         <img src="http://omy0twg9t.bkt.clouddn.com/blog/logo.png" alt="Logo" width="35px;"/> 
                         </a>
                     </div>
                     <!-- // Nav logo -->
@@ -163,7 +163,7 @@
         <!-- ============================ Hero Image =========================== -->
 
         <section id="hero" class="scrollme">
-            <div class="container-fluid element-img" style="background: url(https://static.yuzunzz.top/images/2016/12/12/bg.jpg) no-repeat center center fixed;background-size: cover">
+            <div class="container-fluid element-img" style="background: url(http://omy0twg9t.bkt.clouddn.com/blog/cover.jpg) no-repeat center center fixed;background-size: cover">
                 <div class="row">
                     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
                         <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
@@ -221,16 +221,16 @@
 <p>选择<strong>虚拟机/ CD DVD/ </strong>浏览文件，选择下载的镜像（如gparted-live-0.8.0-5.iso），把 “已连接” 和 “开机时启动” 复选框勾选上，然后重启系统</p>
 <p>重启到 VMware 开机画面时，快速按ESC键进入启动设备项选择界面，或者按F2进BIOS将CD ROM调到第一启动项（boot项，按减号调整启动项顺序）</p>
 <p>加载镜像，选择 第一项，进入gparted live-cd 模式</p>
-<p><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity1.png" alt="Expandcapacity1.png"></p>
+<p><img src="http://omy0twg9t.bkt.clouddn.com/vmware-expand-root-capacity/1.png" alt="Expandcapacity1.png"></p>
 <p>根据提示，输入26选择中文，输入start X进入图形界面</p>
-<p><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity2.png" alt="Expandcapacity2.png"></p>
+<p><img src="http://omy0twg9t.bkt.clouddn.com/vmware-expand-root-capacity/2.png" alt="Expandcapacity2.png"></p>
 <p>进入图形界面后可以看到当前的分区情况，第一部分 <strong>/dev/sda1</strong> 大小为安装虚拟机时所分配的虚拟磁盘空间大小，第二部分 <strong>/dev/sd2 /dev/sd5</strong> 是swap分区（似乎），第三部分是未分配的磁盘空间，即我们之前所扩充的虚拟磁盘</p>
 <p>Gparted调整磁盘空间的原理自行百度，按照用法，可以将相邻的分区合并，但是我们未分配的空间在swap下面，需要将它“移动”上来。</p>
 <h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作:"></a>具体操作:</h2><ol>
 <li>将 <strong>/dev/sda5</strong> 即swap分区删除</li>
-<li>调整 <strong>/dev/sda2</strong> 的大小，把 <strong>之后空余空间</strong> 调为0,这一步操作会有提示 <strong>可能导致启动分区操作系统无法启动</strong><br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity3.png" alt="Expandcapacity3.png"></li>
-<li>将 <strong>/dev/sda1</strong> 调整到最大<br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity4.png" alt="Expandcapacity4.png"></li>
-<li>将swap还原<br><img src="https://static.yuzunzz.top/images/2017/01/01/Expandcapacity5.png" alt="Expandcapacity5.png"></li>
+<li>调整 <strong>/dev/sda2</strong> 的大小，把 <strong>之后空余空间</strong> 调为0,这一步操作会有提示 <strong>可能导致启动分区操作系统无法启动</strong><br><img src="http://omy0twg9t.bkt.clouddn.com/vmware-expand-root-capacity/3.png" alt="Expandcapacity3.png"></li>
+<li>将 <strong>/dev/sda1</strong> 调整到最大<br><img src="http://omy0twg9t.bkt.clouddn.com/vmware-expand-root-capacity/4.png" alt="Expandcapacity4.png"></li>
+<li>将swap还原<br><img src="http://omy0twg9t.bkt.clouddn.com/vmware-expand-root-capacity/5.png" alt="Expandcapacity5.png"></li>
 <li>确认之前的操作，然后Apply，一般一两分钟就能完成。然后重启虚拟机，进入原系统，再看看分区大小，根分区扩容成功。</li>
 </ol>
 <p>Over.</p>
