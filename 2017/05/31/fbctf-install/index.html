@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: ctf | yuzunzz.github.io</title>
+  <title>fbctf-install | yuzunzz.github.io</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,46 +191,50 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/05/31/fbctf-install/">fbctf-install</a></h4>
-                            
-                            <p><time datetime="2017-05-31T10:52:01.000Z"><a href="/2017/05/31/fbctf-install/">2017-05-31</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/01/03/script-sole/">填坑——脚本大坑</a></h4>
-                            
-                            <p><time datetime="2017-01-03T00:29:31.000Z"><a href="/2017/01/03/script-sole/">2017-01-03</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-05-31T10:52:01.000Z" itemprop="datePublished">
+          2017-05-31
+      </time>
+    
+    
+    | 
+    <a href='/tags/ctf/'>ctf</a>
+    
+    
+</span>
+                <h1>fbctf-install</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p>去年年底搭建了一次fbctf平台，因为伟大的墙，以及很多依赖服务都在国外的原因，安装过程极为痛苦。整理下可能卡住的地方。</p>
+<p>默认不加参数的话是dev模式，第一个可能卡住的地方是安装pip和通过pip安装依赖的时候，添加下国内镜像加速安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -H pip install --upgrade pip -i https://pypi.mirrors.ustc.edu.cn/simple/ </span><br><span class="line">sudo -H pip install mycli -i https://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure></p>
+<p>第二个地方是安装hhvm的时候，去年装的时候百分百装不上，因为<a href="http://dl.hhvm.com/" target="_blank" rel="external">hhvm</a>被墙了，现在不墙了，假如墙了就把搜索下<a href="http://dl.hhvm.com/" target="_blank" rel="external">hhvm</a>的ip或者镜像然后改下。</p>
+<p>第三个地方是composer安装依赖，同理使用<a href="https://pkg.phpcomposer.com/" target="_blank" rel="external">国内镜像</a>。</p>
+<p>第四个地方是npm，还是同理，使用镜像。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># Install and update NPM</span><br><span class="line">package npm</span><br><span class="line"># Update NPM with itself: https://github.com/npm/npm/issues/14610</span><br><span class="line">sudo npm --registry=https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist install -g npm@lts</span><br><span class="line"></span><br><span class="line"># Install node</span><br><span class="line">package nodejs-legacy</span><br><span class="line"></span><br><span class="line"># Install all required node_modules in the CTF folder</span><br><span class="line">sudo npm --registry=https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist install --prefix &quot;$CTF_PATH&quot;</span><br><span class="line">sudo npm --registry=https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist install -g grunt</span><br><span class="line">sudo npm --registry=https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist install -g flow-bin</span><br></pre></td></tr></table></figure></p>
+<p>有的时候安装node-sass还可能失败…</p>
+<p>第五个地方是安装unison，没安装成功过，也用不上，直接注释掉。</p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2017/01/14/cygwin-mintty/">
+        配置一个好用的terminal →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo"></div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
